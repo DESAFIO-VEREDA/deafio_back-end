@@ -4,10 +4,12 @@ const { getByRA } = require('../../services/students');
 module.exports = async (req, res, next) => {
     try {
         const { ra } = req.params;
-        const student = await getByRA(ra);
-        if (!student) return res.status(StatusCodes.NOT_FOUND).json({ message: 'Student not found' });
-        req.student = student;
-        
+        const proofs = await getByRA(ra);
+        if (!proofs || proofs.length === 0) {
+            return res.status(StatusCodes.NOT_FOUND).json({ message: 'Student not found' });
+        } 
+        req.proofs = proofs;
+ 
         next();
     } catch (error) {
         next(error)

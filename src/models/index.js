@@ -1,15 +1,17 @@
-const listStudents = require('./listStudents');
-const createStudent = require('./createStudent');
-const updateStudent = require('./updateStudent');
-const removeStudent = require('./removeStudent');
-const getStudentByRA = require('./getStudentByRA');
+const listProofs = require('./listProofs');
+const createProof = require('./createProof');
+const updateProof = require('./updateProof');
+const removeProof = require('./removeProof');
+const getProofById = require('./getProofById');
+const getProofsByRA = require('./getProofsByRA');
 
 
 
 module.exports = {
-    listStudents,
-    createStudent,
-    updateStudent,
-    removeStudent,
-    getStudentByRA
+    listProofs,
+    createProof,
+    updateProof,
+    removeProof,
+    getProofById,
+    getProofsByRA
 }

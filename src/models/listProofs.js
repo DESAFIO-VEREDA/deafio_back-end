@@ -1,15 +1,16 @@
 const { QueryTypes } = require('@sequelize/core');
 const connection = require('./connection');
 
-const listStudents = async () => {
+const listProofs = async () => {
     try {
-        const students = await connection.query('SELECT * from studentBase', {
+        const proofs = await connection.query('SELECT * from studentBase', {
+            raw: true,
             type: QueryTypes.SELECT
         })
-        return students
+        return proofs
     } catch (error){
         return error;
     }
 }
 
-module.exports = listStudents
+module.exports = listProofs

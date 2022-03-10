@@ -1,9 +1,9 @@
-const { listStudents } = require ('../../models');
+const { listProofs } = require ('../../models');
 
 const list = async () => {
     try {
-        const students = listStudents()
-        return students;
+        const proofs = listProofs()
+        return proofs;
     } catch (error) {
         return error;
     }
